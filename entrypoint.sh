@@ -18,11 +18,5 @@ if test -f "$TMPPATH" && ! test -w "$TMPPATH"; then
     exit 1
 fi
 
-MODDIR="/atheme/modules"
-if test -f "$MODDIR" && ! test -w "$MODDIR"; then
-    echo "ERROR: $MODDIR not exist"
-    exit 1
-fi
-
 rm -f /atheme/var/atheme.pid
 /atheme/bin/atheme-services -n "$@"
