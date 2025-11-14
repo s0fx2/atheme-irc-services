@@ -31,7 +31,7 @@ RUN test -z "$BUILD_CONTRIB_MODULES" || sed -i "s/@MKDIR_P@/mkdir -p/g" /atheme-
 
 # Configure and build
 RUN cd /atheme-src && \
-    ./configure --prefix=/atheme $(test -z "$BUILD_CONTRIB_MODULES" || echo --enable-contrib) && \
+    ./configure --prefix=/atheme --with-moduledir=/modules $(test -z "$BUILD_CONTRIB_MODULES" || echo --enable-contrib) && \
     make -j${MAKE_NUM_JOBS:-$(nproc)} && make install
 
 
