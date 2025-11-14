@@ -2,6 +2,7 @@ name: Docker Build & Push
 
 # 触发条件：push 到 main/master，或 pull request 合并到 main
 on:
+  workflow_dispatch:
   push:
     branches: [ main ]
   pull_request:
